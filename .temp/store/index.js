@@ -5,11 +5,7 @@ export class RootStore {
     this.counter = new CounterStore();
     this.test = new TestStore();
   }
-  getRoot() {
-    return this;
-  }
 }
 const rootStore = new RootStore();
-rootStore.counter.root = () => rootStore;
-rootStore.test.root = () => rootStore;
+Object.keys(rootStore).map(item => rootStore[item].getRootStore = () => rootStore);
 export default rootStore;

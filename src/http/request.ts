@@ -1,8 +1,7 @@
 import '@tarojs/async-await'
 
-import { autobind } from 'core-decorators'
 
-import { Result } from '@entities/common'
+
 import Taro from '@tarojs/taro'
 
 async function request(options) {
@@ -23,7 +22,7 @@ async function request(options) {
     }
 }
 
-@autobind
+
 class Req {
     get(url: string, data?) {
         return request({ url, data: data || {}, method: 'GET' })

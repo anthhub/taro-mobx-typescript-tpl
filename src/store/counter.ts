@@ -4,11 +4,11 @@ export class CounterStore {
   @observable
   counter: number = 0
 
-  root: () => IRootStore
+  getRootStore: () => IRootStore
 
   @action
   increment = (number: number = 1) => {
-    const root = this.root()
+    const root = this.getRootStore()
     console.log(root.test.counter)
     this.counter += number
   }

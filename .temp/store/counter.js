@@ -4,7 +4,7 @@ export class CounterStore {
   constructor() {
     this.counter = 0;
     this.increment = (number = 1) => {
-      const root = this.root();
+      const root = this.getRootStore();
       console.log(root.test.counter);
       this.counter += number;
     };

@@ -13,12 +13,12 @@ declare var wx : {
 }
 
 
-// declare interface Result<T> {
-//     success?: boolean
-//     error_msg?: string
-//     data?: T
-//     [propName: string]: any
-// }
+declare interface Result<T> {
+    success?: boolean
+    error_msg?: string
+    data?: T
+    [propName: string]: any
+}
 
 declare interface PlainObject {
     [propName: string]: any

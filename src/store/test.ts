@@ -4,7 +4,7 @@ export class TestStore {
   @observable
   counter: number = 0
 
-  root: () => IRootStore
+  getRootStore: () => IRootStore
 
   @action
   increment = (number: number = 1) => {

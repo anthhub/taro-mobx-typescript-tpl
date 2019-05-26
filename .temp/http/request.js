@@ -1,7 +1,5 @@
 import Taro from '@tarojs/taro-h5';
-import * as tslib_1 from "tslib";
 import '@tarojs/async-await';
-import { autobind } from 'core-decorators';
 import Nerv from "nervjs";
 async function request(options) {
   Taro.showLoading({ title: '全力请求中!', mask: true });
@@ -19,13 +17,12 @@ async function request(options) {
     Taro.hideLoading();
   }
 }
-let Req = class Req {
+class Req {
   get(url, data) {
     return request({ url, data: data || {}, method: 'GET' });
   }
   post(url, data) {
     return request({ header: { 'content-type': 'application/json' }, url, data: data || {}, method: 'POST' });
   }
-};
-Req = tslib_1.__decorate([autobind], Req);
+}
 export default new Req();
