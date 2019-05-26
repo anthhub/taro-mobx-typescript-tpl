@@ -4,7 +4,6 @@ import get from "lodash/get"
 export default function testable() {
   return WrappedComponent => {
     class Paging extends WrappedComponent {
-
       onPullDownRefresh() {
         if (super.onPullDownRefresh) {
           super.onPullDownRefresh()

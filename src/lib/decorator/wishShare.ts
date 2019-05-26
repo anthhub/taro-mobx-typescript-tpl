@@ -1,4 +1,3 @@
-
 export interface ShareConfig {
   title?: string
   path?: string

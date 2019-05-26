@@ -1,14 +1,16 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "taro-mobx-typescript-tpl",
+	"projectname": "taro-boilerplate",
 	"description": "",
 	"appid": "wxdd6a5b72b9543b32",
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
 		"postcss": false,
 		"minified": false,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
