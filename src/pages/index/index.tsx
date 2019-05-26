@@ -74,7 +74,7 @@ class Index extends Component<IProps> {
                     {showImg && (
                         <Image
                             style="width: 100%;background: #fff;"
-                            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558875874138&di=c4454d21d495f0216c999a5691394eac&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F8d3a605a15848b9c1eb291aada0bcffd457426d6.jpg"
+                            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558878356172&di=164c2b32dde01dc4c12d51439c71f401&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fe51a046748cfb2c4eb66a8c3c86a4b3d536f06c1.jpg"
                         />
                     )}
                 </View>

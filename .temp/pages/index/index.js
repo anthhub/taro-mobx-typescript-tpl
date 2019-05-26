@@ -49,7 +49,7 @@ let Index = class Index extends Component {
 
                 <View>
                     <Text>当计数超过 10 时显示图片 </Text>
-                    {this.props.viewStore.showImg && <Image style="width: 100%;height: auto;background: #fff;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558875874138&di=c4454d21d495f0216c999a5691394eac&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F8d3a605a15848b9c1eb291aada0bcffd457426d6.jpg" />}
+                    {this.props.viewStore.showImg && <Image style="width: 100%;height: 500px;background: #fff;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558875874138&di=c4454d21d495f0216c999a5691394eac&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F8d3a605a15848b9c1eb291aada0bcffd457426d6.jpg" />}
                 </View>
             </View>;
   }
