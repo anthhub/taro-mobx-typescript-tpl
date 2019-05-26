@@ -1,6 +1,7 @@
 import { computed, reaction } from 'mobx'
+import StoreExt from '@lib/extent/store'
 
-export class ViewStore {
+export class ViewStore extends StoreExt {
     @computed
     get showImg() {
         const { counterStore } = this.getRootStore()
@@ -13,8 +14,13 @@ export class ViewStore {
         const { stepStore, counterStore } = this.getRootStore()
         reaction(
             () => stepStore.step > 0 && counterStore.counter > 10,
-            flag => {
-                flag && console.log('这里可以自动发送请求')
+            async flag => {
+                if (flag) {
+                    console.log('这里可以自动发送请求')
+                    const rs = await this.api.user.getUserInfo({ loginname: '' })
+                    await this.setCache('result', rs)
+                    this.$showToast(rs.rs)
+                }
             }
         )
     }

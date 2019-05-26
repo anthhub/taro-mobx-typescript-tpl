@@ -11,6 +11,7 @@ export async function setCache(key: string, value: PlainObject) {
 }
 // 读取缓存
 export async function getCache(key: string) {
+    debugger
     const result = ((await Taro.getStorage({ key })) as unknown) as string
     if (result) {
         return JSON.parse(result)
