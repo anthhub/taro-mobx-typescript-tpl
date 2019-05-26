@@ -1,15 +1,15 @@
 import * as tslib_1 from "tslib";
-import { action, observable } from "mobx";
+import { action, observable } from 'mobx';
 export class CounterStore {
   constructor() {
     this.counter = 0;
     this.increment = (number = 1) => {
-      const root = this.getRootStore();
-      console.log(root.test.counter);
-      this.counter += number;
+      const { stepStore } = this.getRootStore();
+      this.counter += Number(number) * stepStore.step;
     };
     this.decrement = (number = 1) => {
-      this.counter -= number;
+      const { stepStore } = this.getRootStore();
+      this.counter -= Number(number) * stepStore.step;
     };
   }
 }

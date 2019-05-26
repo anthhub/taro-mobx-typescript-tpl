@@ -51,6 +51,7 @@
         "stylelint": "^9.10.1",
         "stylelint-config-standard": "^18.2.0",
         "stylelint-scss": "^3.5.4",
+        "tank-utils": "^1.2.2",
         "taro": "^0.0.7",
         "taro-ui": "^1.5.2",
         "tslint": "^5.13.1",

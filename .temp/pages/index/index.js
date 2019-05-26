@@ -1,5 +1,5 @@
 import * as tslib_1 from "tslib";
-import { Button, View } from '@tarojs/components';
+import { Button, View, Input, Text, Image } from '@tarojs/components';
 import { inject, observer } from "@tarojs/mobx-h5";
 import { Component } from "@tarojs/taro-h5";
 import Nerv from "nervjs";
@@ -16,20 +16,21 @@ let Index = class Index extends Component {
   }
   handleDecrement(event) {
     const dataset = event.target.dataset;
-    this.props.counter.decrement(dataset.number);
+    this.props.counterStore.decrement(dataset.number);
   }
   handleIncrement(event) {
     const dataset = event.target.dataset;
-    this.props.counter.increment(dataset.number);
+    this.props.counterStore.increment(dataset.number);
+  }
+  onInput(e) {
+    this.props.stepStore.setStep(e.target.value);
   }
   render() {
-    const { counter } = this.props;
-    const number = counter.counter;
+    const { counterStore } = this.props;
+    const number = counterStore.counter;
     return <View>
                 <Head text={number + ''} />
-                <Button onClick={this.handleDecrement} data-number={10}>
-                    <MIcon type="minus" /> 10
-                </Button>
+
                 <Button onClick={this.handleDecrement} data-number={1}>
                     <MIcon type="minus" />
                 </Button>
@@ -40,9 +41,16 @@ let Index = class Index extends Component {
                 <Button onClick={this.handleIncrement} data-number={1}>
                     <MIcon type="plus" />
                 </Button>
-                <Button onClick={this.handleIncrement} data-number={10}>
-                    <MIcon type="plus" /> 10
-                </Button>
+
+                <View>
+                    <Text>输入计数的步长</Text>
+                    <Input onInput={this.onInput} type="number" placeholder="输入计数的步长" />
+                </View>
+
+                <View>
+                    <Text>当计数超过 10 时显示图片 </Text>
+                    {this.props.viewStore.showImg && <Image style="width: 100%;height: auto;background: #fff;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558875874138&di=c4454d21d495f0216c999a5691394eac&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Fface%2F8d3a605a15848b9c1eb291aada0bcffd457426d6.jpg" />}
+                </View>
             </View>;
   }
   config = {
@@ -53,5 +61,5 @@ let Index = class Index extends Component {
     console.log('reload');
   };
 };
-Index = tslib_1.__decorate([inject('counter'), observer, autobind], Index);
+Index = tslib_1.__decorate([inject(({ counterStore, stepStore, viewStore }) => ({ stepStore, counterStore, viewStore })), observer, autobind], Index);
 export default Index;
