@@ -4,8 +4,6 @@ import { inject, observer } from "@tarojs/mobx-h5";
 import { Component } from "@tarojs/taro-h5";
 import Nerv from "nervjs";
 import MIcon from "../../components/icon/index";
-import paging from "../../lib/decorator/paging";
-import wishShare from "../../lib/decorator/wishShare";
 import './index.scss';
 let Index = class Index extends Component {
   constructor() {
@@ -51,9 +49,6 @@ let Index = class Index extends Component {
     const dataset = event.target.dataset;
     this.props.counter.increment(dataset.number);
   };
-
-  componentDidMount() {}
-
 };
-Index = tslib_1.__decorate([inject('counter'), observer, wishShare(), paging()], Index);
+Index = tslib_1.__decorate([inject('counter'), observer], Index);
 export default Index;

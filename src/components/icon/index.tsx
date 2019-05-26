@@ -1,26 +1,24 @@
-import { Text } from "@tarojs/components"
-import Taro from "@tarojs/taro"
-import classnames from "classnames"
-import { ComponentClass, HTMLAttributes } from "react"
-import BaseComponent from "../base"
+import { Text } from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import classnames from 'classnames'
+import { ComponentClass, HTMLAttributes } from 'react'
+import BaseComponent from '../../lib/extent/comp'
 
-import "./index.scss"
+import './index.scss'
 
 interface IProps extends HTMLAttributes<{}> {
-  type: string
+    type: string
 }
 
 interface Icon {
-  props: IProps
+    props: IProps
 }
 
 class Icon extends BaseComponent {
-  render() {
-    const { type, className } = this.props
-    return (
-      <Text className={classnames(["ui-icon", `ui-icon-${type}`, className])} />
-    )
-  }
+    render() {
+        const { type, className } = this.props
+        return <Text className={classnames(['ui-icon', `ui-icon-${type}`, className])} />
+    }
 }
 
 export default Icon as ComponentClass<IProps, {}>

@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
-import { IValue } from '../../interfaces/ICache'
+
 // 设置缓存
-export async function setCache(key: string, value: IValue) {
+export async function setCache(key: string, value: PlainObject) {
     let params: any = value
     if (typeof value === 'object') {
         params = JSON.stringify(value)

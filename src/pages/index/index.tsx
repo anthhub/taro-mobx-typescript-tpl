@@ -4,8 +4,6 @@ import { inject, observer } from '@tarojs/mobx'
 import Taro, { Component, PageConfig } from '@tarojs/taro'
 import { ComponentClass } from 'react'
 import MIcon from '../../components/icon'
-import paging from '@lib/decorator/paging'
-import wishShare from '@lib/decorator/wishShare'
 import CounterStore from '../../store/counter'
 import './index.scss'
 
@@ -21,8 +19,6 @@ interface Index {
 
 @inject('counter')
 @observer
-@wishShare()
-@paging()
 class Index extends Component {
     config: PageConfig = {
         navigationBarTitleText: '首页',
