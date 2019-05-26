@@ -1,5 +1,5 @@
 {
-	"name": "taro-boilerplate",
+	"name": "taro-mobx-typescript-tpl",
 	"version": "1.0.0",
 	"private": true,
 	"description": "",
@@ -20,7 +20,7 @@
 		"unit": "jest --config test/unit/jest.conf.js",
 		"test": "npm run lint && npm run unit"
 	},
-	"author": "",
+	"author": "anthhub",
 	"license": "MIT",
 	"dependencies": {
 		"@tarojs/async-await": "1.2.0-beta.7",

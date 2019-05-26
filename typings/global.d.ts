@@ -1,20 +1,24 @@
 declare var process: {
     env: {
+        TARO_ENV: string
         NODE_ENV: string
         APP_ENV: string
         BASEURL: string
     }
 }
 
-declare interface Result<Entity> {
-    success?: boolean
-    state?: number
-    code?: number
-    data?: Entity
-    count?: number
-    msg?: string
-    [propName: string]: any
+
+declare var wx : {
+    [method: string]: Function
 }
+
+
+// declare interface Result<T> {
+//     success?: boolean
+//     error_msg?: string
+//     data?: T
+//     [propName: string]: any
+// }
 
 declare interface PlainObject {
     [propName: string]: any
