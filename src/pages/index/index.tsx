@@ -1,4 +1,4 @@
-import { Button, View, Input, Text, Image } from '@tarojs/components'
+import { Button, View, Input, Text, Image, Picker } from '@tarojs/components'
 import { BaseEvent } from '@tarojs/components/types/common'
 import { inject, observer } from '@tarojs/mobx'
 import Taro, { Component, PageConfig } from '@tarojs/taro'
@@ -45,11 +45,15 @@ class Index extends Component<IProps> {
         return this.props.stepStore.setStep(e.target.value)
     }
 
+    onPickerChange(e) {
+        console.log(e.target.value)
+    }
+
     render() {
         const {
             counterStore,
             stepStore: { step },
-            viewStore: { showImg },
+            viewStore: { showImg, options, optionsModal },
         } = this.props
         const number = counterStore.counter
 
@@ -71,6 +75,14 @@ class Index extends Component<IProps> {
                 <View>
                     <Text>输入计数的步长</Text>
                     <Input value={step + ''} onInput={this.onInput} type="number" placeholder="输入计数的步长" />
+                </View>
+                <View className="page-section">
+                    <Text>地区选择器</Text>
+                    <View>
+                        <Picker mode="selector" range={options} onChange={this.onPickerChange}>
+                            <View className="picker">当前选择模式： {optionsModal}</View>
+                        </Picker>
+                    </View>
                 </View>
 
                 <View>

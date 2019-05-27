@@ -1,11 +1,22 @@
 import { computed, reaction } from 'mobx'
 import StoreExt from '@lib/extent/store'
+import { options } from '@dataPool/data/options'
 
 export class ViewStore extends StoreExt {
     @computed
     get showImg() {
         const { counterStore } = this.getRootStore()
         return counterStore.counter > 10
+    }
+
+    @computed
+    get optionsModal() {
+        return this.showImg ? 'clothes' : 'shoes'
+    }
+
+    @computed
+    get options() {
+        return Object.values(options[this.optionsModal])
     }
 
     private getRootStore: () => IRootStore

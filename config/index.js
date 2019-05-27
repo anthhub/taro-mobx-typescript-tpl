@@ -30,6 +30,8 @@ const config = {
 
         '@pages': path.resolve(__dirname, '..', 'src/pages'),
         '@styles': path.resolve(__dirname, '..', 'src/styles'),
+
+        '@dataPool': path.resolve(__dirname, '..', 'src/dataPool'),
     },
     copy: {
         patterns: [{ from: 'src/static', to: 'dist/static' }],
