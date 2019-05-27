@@ -19,19 +19,21 @@ The best practice boilerplate with taro, ts and mobx
         ├── extent/                // 类的拓展
         ├── utils/                 // 工具函数
     ├── pages/                     // 页面目录, 必须和app.tsx里面路由一致
-        ├── index/                 // 自定义,页面
-        ├── ...                    // 自定义,页面
+        ├── index/                 // 自定义页面
+        ├── ...                    // ...
     ├── service/                   // 可选, 仅为store的辅助函数, 封装复杂业务逻辑; 避免过度使用
     ├── static/                    // 静态资源文件, 图片等
     ├── store/                     // 全局状态管理
         ├── index                  // 组合多个store
-        ├── counter/               // 类的拓展
-        ├── step/                  // 工具函数
-        ├── view/                  // 工具函数
-        ├── ...                    // 工具函数
-    ├── static/                    // 自定义样式
-    ├── app.scss                   // 约定的全局样式文件，自动引入，也可以用 global.less
-    ├── app.tsx                    // 可以在这里加入 polyfill
-    ├── index.html                 // 运行时配置文件
-├── typings                        // umi 配置，同 config/config.js，二选一
+        ├── counter/               // 具体业务的store
+        ├── step/                  // 具体业务的store
+        ├── view/                  // 具体业务的store
+        ├── ...                    // ...
+    ├── style/                     // 自定义样式
+    ├── app.scss                   // 约定的全局样式文件，自动引入，也可以用less
+    ├── app.tsx                    // taro入口
+    ├── index.html                 // h5 html模板
+    ├── route.ts                   // 定义页面路由
+├── typings                        // 全局类型定义
+
 
