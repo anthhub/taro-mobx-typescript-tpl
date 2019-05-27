@@ -3,7 +3,7 @@ The best practice boilerplate with taro, ts and mobx
 
 ## 目录结构
 
-```
+``` JavaScript
 ├── dist/                          // 默认的 build 输出目录
 ├── config/                        // taro的webpack配置
 └── src/                           // 源码目录
@@ -36,9 +36,11 @@ The best practice boilerplate with taro, ts and mobx
     ├── route.ts                   // 定义页面路由
 ├── typings                        // 全局类型定义
 
+```
+
 ## 数据流向
 
-    ```mermaid
+```mermaid
         graph TD
         rootStore[rootStore] --store--> view[视图] 
 
@@ -56,7 +58,7 @@ The best practice boilerplate with taro, ts and mobx
         
         rootStore[rootStore] --> otherStore[otherStore...] 
         otherStore[otherStore...] --> rootStore[rootStore] 
-    ```
+```
 
 
 
