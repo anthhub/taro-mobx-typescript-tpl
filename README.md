@@ -6,20 +6,32 @@ The best practice boilerplate with taro, ts and mobx
 ```
 ├── dist/                          // 默认的 build 输出目录
 ├── config/                        // taro的webpack配置
-└── src/                           // 源码目录，可选
-    ├── layouts/index.js           // 全局布局
-    ├── pages/                     // 页面目录，里面的文件即路由
-        ├── .umi/                  // dev 临时目录，需添加到 .gitignore
-        ├── .umi-production/       // build 临时目录，会自动删除
-        ├── document.ejs           // HTML 模板
-        ├── 404.js                 // 404 页面
-        ├── page1.js               // 页面 1，任意命名，导出 react 组件
-        ├── page1.test.js          // 用例文件，umi test 会匹配所有 .test.js 和 .e2e.js 结尾的文件
-        └── page2.js               // 页面 2，任意命名
-    ├── global.css                 // 约定的全局样式文件，自动引入，也可以用 global.less
-    ├── global.js                  // 可以在这里加入 polyfill
-    ├── app.js                     // 运行时配置文件
-├── .umirc.js                      // umi 配置，同 config/config.js，二选一
-├── .env                           // 环境变量
-└── package.json
-```
+└── src/                           // 源码目录
+    ├── components/                // 通用组件目录
+    ├── dataPool/                  // 可选, 静态数据中心
+        ├── data/                  // 静态数据来源(例如option数组,一些枚举类型和数据map)
+        ├── interfaces/            // 自定义类型来源
+    ├── http/                      // 配置url, 统一处理http请求, 只暴露具体方法供外界使用
+        ├── api/                   // 具体请求方法
+        ├── ...                    // 其他配置
+    ├── lib/                       // 库文件
+        ├── decorator/             // 装饰器方法
+        ├── extent/                // 类的拓展
+        ├── utils/                 // 工具函数
+    ├── pages/                     // 页面目录, 必须和app.tsx里面路由一致
+        ├── index/                 // 自定义,页面
+        ├── ...                    // 自定义,页面
+    ├── service/                   // 可选, 仅为store的辅助函数, 封装复杂业务逻辑; 避免过度使用
+    ├── static/                    // 静态资源文件, 图片等
+    ├── store/                     // 全局状态管理
+        ├── index                  // 组合多个store
+        ├── counter/               // 类的拓展
+        ├── step/                  // 工具函数
+        ├── view/                  // 工具函数
+        ├── ...                    // 工具函数
+    ├── static/                    // 自定义样式
+    ├── app.scss                   // 约定的全局样式文件，自动引入，也可以用 global.less
+    ├── app.tsx                    // 可以在这里加入 polyfill
+    ├── index.html                 // 运行时配置文件
+├── typings                        // umi 配置，同 config/config.js，二选一
+

@@ -1,5 +1,5 @@
 import api from '@http/'
-import { getCache, setCache } from '@lib/helper/cache'
+import { getCache, setCache } from '@lib/utils/cache'
 import Taro from '@tarojs/taro'
 
 export default abstract class StoreExt {
