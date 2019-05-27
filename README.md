@@ -5,9 +5,7 @@ The best practice boilerplate with taro, ts and mobx
 
 ```
 ├── dist/                          // 默认的 build 输出目录
-├── mock/                          // mock 文件所在目录，基于 express
-├── config/
-    ├── config.js                  // umi 配置，同 .umirc.js，二选一
+├── config/                        // taro的webpack配置
 └── src/                           // 源码目录，可选
     ├── layouts/index.js           // 全局布局
     ├── pages/                     // 页面目录，里面的文件即路由
