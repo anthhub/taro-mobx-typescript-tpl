@@ -42,13 +42,17 @@ class Index extends Component<IProps> {
     }
 
     onInput(e) {
-        this.props.stepStore.setStep(e.target.value)
+        return this.props.stepStore.setStep(e.target.value)
     }
 
     render() {
-        const { counterStore ,viewStore : {showImg }} = this.props
+        const {
+            counterStore,
+            stepStore: { step },
+            viewStore: { showImg },
+        } = this.props
         const number = counterStore.counter
-        
+
         return (
             <View>
                 <Head text={number + ''} />
@@ -66,7 +70,7 @@ class Index extends Component<IProps> {
 
                 <View>
                     <Text>输入计数的步长</Text>
-                    <Input onInput={this.onInput} type="number" placeholder="输入计数的步长" />
+                    <Input value={step + ''} onInput={this.onInput} type="number" placeholder="输入计数的步长" />
                 </View>
 
                 <View>

@@ -10,6 +10,13 @@ export class ViewStore extends StoreExt {
 
     private getRootStore: () => IRootStore
 
+    constructor(getRootStore) {
+        super()
+        this.getRootStore = getRootStore
+        this.effects()
+    }
+
+    // 副作用
     private effects() {
         const { stepStore, counterStore } = this.getRootStore()
         reaction(
