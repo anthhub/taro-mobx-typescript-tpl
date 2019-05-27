@@ -42,22 +42,29 @@ The best practice boilerplate with taro, ts and mobx
 
 ```mermaid
         graph TD
+        后台 --响应--> http模块 
+        http模块 --请求--> 后台 
+        http模块 --响应--> 具体的api方法
+
+        具体的api方法 --请求--> http模块
+        store基类 -.引用.-> 具体的api方法
+
+        businessStore[userStore] --继承--> store基类
+        otherStore[userStore] --继承--> store基类
+        
         rootStore[rootStore] --store--> view[视图] 
 
         view[根组件] --context=state+action--> A[组件A] 
         view[根组件] --context=state+action--> B[组件B] 
 
-        rootStore[rootStore] --> userStore[userStore] 
-        userStore[userStore] --> rootStore[rootStore] 
 
-        rootStore[rootStore] --> routerStore[routerStore] 
-        routerStore[routerStore] --> rootStore[rootStore] 
-
-        rootStore[rootStore] --> businessStore[businessStore] 
-        businessStore[businessStore] --> rootStore[rootStore] 
+        rootStore[rootStore] -.引用.-> businessStore[businessStore] 
+        businessStore[businessStore] -.引用.-> rootStore[rootStore] 
         
-        rootStore[rootStore] --> otherStore[otherStore...] 
-        otherStore[otherStore...] --> rootStore[rootStore] 
+        rootStore[rootStore] -.引用.-> otherStore[otherStore...] 
+        otherStore[otherStore...] -.引用.-> rootStore[rootStore] 
+    
+
 ```
 
 
