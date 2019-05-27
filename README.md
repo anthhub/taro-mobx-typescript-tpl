@@ -36,4 +36,27 @@ The best practice boilerplate with taro, ts and mobx
     ├── route.ts                   // 定义页面路由
 ├── typings                        // 全局类型定义
 
+## 数据流向
+
+    ```mermaid
+        graph TD
+        rootStore[rootStore] --store--> view[视图] 
+
+        view[根组件] --context=state+action--> A[组件A] 
+        view[根组件] --context=state+action--> B[组件B] 
+
+        rootStore[rootStore] --> userStore[userStore] 
+        userStore[userStore] --> rootStore[rootStore] 
+
+        rootStore[rootStore] --> routerStore[routerStore] 
+        routerStore[routerStore] --> rootStore[rootStore] 
+
+        rootStore[rootStore] --> businessStore[businessStore] 
+        businessStore[businessStore] --> rootStore[rootStore] 
+        
+        rootStore[rootStore] --> otherStore[otherStore...] 
+        otherStore[otherStore...] --> rootStore[rootStore] 
+    ```
+
+
 

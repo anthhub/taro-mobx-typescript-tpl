@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-commonjs
 const path = require('path')
 
 const config = {
